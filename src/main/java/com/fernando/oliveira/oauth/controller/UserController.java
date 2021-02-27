@@ -22,7 +22,7 @@ public class UserController {
 	public ResponseEntity<User> findByEmail(@RequestParam String email) {
 		try {
 
-			User user = service.findByEmail(email);
+			User user = (User) service.findByEmail(email);
 
 			return ResponseEntity.ok().body(user);
 

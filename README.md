@@ -30,6 +30,6 @@ build docker image
 
 run docker container
 
-* $ docker run -P --network bkn-net bkn-oauth:v1 
+* $ docker run -P --network bkn-net -e SERVER_CLOUD_CONFIG_URI=${SERVER_CLOUD_CONFIG_URI} bkn-oauth:v1 
 
 

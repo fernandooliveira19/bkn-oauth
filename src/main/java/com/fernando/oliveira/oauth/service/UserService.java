@@ -32,14 +32,14 @@ public class UserService implements UserDetailsService{
 	}
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = client.findByEmail(username).getBody();
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		User user = client.findByEmail(email).getBody();
 		if(user == null) {
-			logger.error("Email not found: " + username);
+			logger.error("Email not found: " + email);
 			throw new UsernameNotFoundException("Email not found");
 		}
 		
-		logger.info("Email found: " + username);
+		logger.info("Email found: " + email);
 		
 		return user;
 	}
